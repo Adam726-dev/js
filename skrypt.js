@@ -176,26 +176,7 @@
 //     alert("klik");
 // })
 
-const buttonDark = document.getElementById("dark");
-buttonDark.addEventListener("click", () => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
-    } else {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-    }
-})
 
-window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-    } else {
-        document.body.classList.remove("dark-mode");
-    }
-})
 
 
 const changeBtn = document.getElementById("changeBtn");
@@ -228,3 +209,117 @@ buttonCount.addEventListener("click", () => {
     pe.textContent = `kliknięto: ${licznik} razy`;
 
 })
+const dane = document.getElementById("dane");
+const form = document.getElementById("userForm");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("formUsername").value;
+    const mail = document.getElementById("formEmail").value;
+    // alert(name + " " + mail);
+    localStorage.setItem("name", name);
+    localStorage.setItem("mail", mail);
+    dane.textContent = `Name: ${localStorage.getItem("name")}, Email: ${localStorage.getItem("mail")}`;
+
+    const user = { name: name, mail: mail };
+    localStorage.setItem("user", JSON.stringify(user));
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+    console.log(savedUser.name); 
+    
+})
+
+// const buttonDark = document.getElementById("dark");
+// const savedTheme = localStorage.getItem("theme");
+// if (savedTheme === "dark") {
+//     document.body.classList.add("dark-mode");
+// }
+// buttonDark.addEventListener("click", () => {
+    
+//     if (savedTheme === "dark") {
+//         document.body.classList.contains("dark-mode");
+//         document.body.classList.remove("dark-mode");
+//         localStorage.setItem("theme", "light");
+        
+//     } else {
+//         document.body.classList.add("dark-mode");
+//         localStorage.setItem("theme", "dark");
+//     }
+// })
+
+
+
+const themeButton = document.getElementById("dark");
+document.body.classList.add("light");
+themeButton.addEventListener("click", () => {
+    const isLight = document.body.classList.contains("light");
+    if(isLight) {
+        themeButton.textContent = "Tryb jasny";
+        document.body.classList.replace("light", "dark");
+    } else {
+        themeButton.textContent = "Tryb ciemny";
+        document.body.classList.replace("dark", "light");
+        }
+        localStorage.setItem("theme", document.body.classList[0]);
+
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+
+    const savedTheme = localStorage.getItem("theme");
+    document.body.classList.add(savedTheme);
+    document.body.classList.remove(savedTheme === "light" ? "dark" : "light");
+    themeButton.textContent = savedTheme === "dark" ? "Tryb ciemny" : "Tryb jasny";
+    
+    const counter = document.getElementById("counter");
+    let counterValue = localStorage.getItem("counter");
+    counterValue++;
+    localStorage.setItem("counter", counterValue);
+    counter.textContent = counterValue;
+
+
+}) 
+
+
+const testList = [1,2,3];
+
+testList.forEach( (el) => {console.log(el*2)})
+
+const mappedList = testList.map( (el) => el*3);
+console.log(`map: ${mappedList}`);
+
+
+const filteredList = testList.filter((el) => { return el%3===0})
+console.log(filteredList);
+
+
+const findList = testList.find((el) => { return el%2===0})
+console.log(findList);
+
+const someList = testList.some((el) => { return el%2===0})
+console.log(someList);
+
+const everyList = testList.every((el) => { return el%2===0})
+console.log(everyList);
+
+testList.sort((a,b) => a+b);
+console.log(testList);
+
+
+const reducedList = testList.reduce((acc, el) => { return acc+el}, 0);
+console.log(reducedList);
+
+
+const list2 = [-3,5,6];
+console.log(list2.some( (el) => {return el < 0;}));
+
+
+const namesList = ["Ania", "Ola", "Kasia"];
+const reducesString = namesList.reduce( (acc, el) => {return acc+el+ ","} );
+console.log(reducesString);
+
+
+const testString = "sdadasdasdD";
+console.log(testString.toUpperCase());
+
+const capitalizedNames = namesList.map( (el) => {return el.toUpperCase()});
+console.log(capitalizedNames);

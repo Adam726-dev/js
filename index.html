@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <style>
+        body.light{
+            background-color: #f0f0f0;
+            color: black;
+        }
+        body.dark{
+            background-color: #212121;
+            color: #ECDFCC;
+        }
+    </style>
     <div>
         <button id="dark">Dark</button> <br>
+        
+        
 
         <fieldset>
             <legend>Zadanie 1</legend>
@@ -33,6 +45,21 @@
                 <p id="count">0</p>
                 <button id="countOne">Klik</button>
             </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Zadanie 4</legend>
+            <form id="userForm">
+                <input type="text" name="username" id="formUsername" placeholder="username">
+                <input type="email" name="email" id="formEmail" placeholder="email">
+                <button type="submit">Zapisz</button>
+                <p id="dane"></p>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Zadanie 5</legend>
+            Odwiedzin: <span id="counter"></span>
         </fieldset>
 
 
