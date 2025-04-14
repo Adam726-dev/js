@@ -28,11 +28,13 @@
 
     <fieldset>
       <legend>Formularz</legend>
-    <form>
-      <input type="text" id="title" placeholder="Tytuł">
-      <input type="text" id="body" placeholder="Treść">
-      <button type="submit" id="btnSubmit">Wyślij</button>
-    </form>
+      <form id="postForm" style="display: flex; flex-direction: column; gap: 10px; width: 400px;">
+        <input type="text" id="title" placeholder="Tytuł" required>
+        <textarea id="body" placeholder="Treść" rows="10" required></textarea>
+        <button type="submit" id="btnSubmit">Wyślij</button>
+      </form>
+
+    <div id="message"></div>
     </fieldset>
 
     

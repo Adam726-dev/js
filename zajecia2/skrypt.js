@@ -154,6 +154,7 @@
 const title = document.getElementById("title");
 const body = document.getElementById("body");
 const btnSubmit = document.getElementById("btnSubmit");
+const message = document.getElementById("message");
 
 btnSubmit.addEventListener("click", (e) => {
   e.preventDefault();
@@ -164,7 +165,9 @@ btnSubmit.addEventListener("click", (e) => {
       userId: 1,
     })
     .then((response) => {
-      console.log("Post dodany!", response.data);
+      console.log("Post dodany", response.data);
+      message.textContent = "Post dodany";
+
     })
     .catch((error) => {
       console.error("Błąd:", error);
