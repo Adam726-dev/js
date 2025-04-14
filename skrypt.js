@@ -93,6 +93,8 @@
 // console.log(suma);
 // console.log(suma2);
 
+// zmiana stopni c na f
+
 
 // const fruits = ["apple", "berry", "orange"];
 // fruits.forEach(function(fruit) {console.log(fruit);});
@@ -117,6 +119,9 @@
 
 // convert(22, 'F');
 // convert(22, 'C'); 
+
+
+// walidacja 
 
 
 
@@ -147,6 +152,7 @@
 // validateUser(User2);
 
 
+// koszyk zakupowy i zniżki
 
 
 // const calculateTotalPrice = (cart) => {
@@ -178,54 +184,61 @@
 
 
 
-
-const changeBtn = document.getElementById("changeBtn");
-const div = document.getElementById("message");
-changeBtn.addEventListener( "click", function(){
-    div.textContent = "Hello";
-    div.style.color = "red";
-})
+// zmiana koloru i napisu
 
 
-const inputLista = document.getElementById("itemInput");
-const liLista = document.getElementById("itemList");
-const buttonLista = document.getElementById("addBtn");
-
-buttonLista.addEventListener("click", dodajListe = () =>{
-    const item = inputLista.value;
-    const li = document.createElement("li");
-    li.textContent = item;
-    liLista.appendChild(li);
-    inputLista.value = "";
-})
+// const changeBtn = document.getElementById("changeBtn");
+// const div = document.getElementById("message");
+// changeBtn.addEventListener( "click", function(){
+//     div.textContent = "Hello";
+//     div.style.color = "red";
+// })
 
 
-const buttonCount = document.getElementById("countOne");
-const pe = document.getElementById("count");
-const divLicznik = document.getElementById("divLicznik");
-let licznik = 0;
-buttonCount.addEventListener("click", () => {
-    licznik++;
-    pe.textContent = `kliknięto: ${licznik} razy`;
+// const inputLista = document.getElementById("itemInput");
+// const liLista = document.getElementById("itemList");
+// const buttonLista = document.getElementById("addBtn");
 
-})
-const dane = document.getElementById("dane");
-const form = document.getElementById("userForm");
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("formUsername").value;
-    const mail = document.getElementById("formEmail").value;
-    // alert(name + " " + mail);
-    localStorage.setItem("name", name);
-    localStorage.setItem("mail", mail);
-    dane.textContent = `Name: ${localStorage.getItem("name")}, Email: ${localStorage.getItem("mail")}`;
+// buttonLista.addEventListener("click", dodajListe = () =>{
+//     const item = inputLista.value;
+//     const li = document.createElement("li");
+//     li.textContent = item;
+//     liLista.appendChild(li);
+//     inputLista.value = "";
+// })
 
-    const user = { name: name, mail: mail };
-    localStorage.setItem("user", JSON.stringify(user));
-    const savedUser = JSON.parse(localStorage.getItem("user"));
-    console.log(savedUser.name); 
+
+// licznik kliknięc
+
+// const buttonCount = document.getElementById("countOne");
+// const pe = document.getElementById("count");
+// const divLicznik = document.getElementById("divLicznik");
+// let licznik = 0;
+// buttonCount.addEventListener("click", () => {
+//     licznik++;
+//     pe.textContent = `kliknięto: ${licznik} razy`;
+
+// })
+// const dane = document.getElementById("dane");
+// const form = document.getElementById("userForm");
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     const name = document.getElementById("formUsername").value;
+//     const mail = document.getElementById("formEmail").value;
+//     // alert(name + " " + mail);
+//     localStorage.setItem("name", name);
+//     localStorage.setItem("mail", mail);
+//     dane.textContent = `Name: ${localStorage.getItem("name")}, Email: ${localStorage.getItem("mail")}`;
+
+//     const user = { name: name, mail: mail };
+//     localStorage.setItem("user", JSON.stringify(user));
+//     const savedUser = JSON.parse(localStorage.getItem("user"));
+//     console.log(savedUser.name); 
     
-})
+// })
+
+
+// licznik odwedzin i dark mode
 
 // const buttonDark = document.getElementById("dark");
 // const savedTheme = localStorage.getItem("theme");
@@ -247,79 +260,83 @@ form.addEventListener("submit", (e) => {
 
 
 
-const themeButton = document.getElementById("dark");
-document.body.classList.add("light");
-themeButton.addEventListener("click", () => {
-    const isLight = document.body.classList.contains("light");
-    if(isLight) {
-        themeButton.textContent = "Tryb jasny";
-        document.body.classList.replace("light", "dark");
-    } else {
-        themeButton.textContent = "Tryb ciemny";
-        document.body.classList.replace("dark", "light");
-        }
-        localStorage.setItem("theme", document.body.classList[0]);
+// const themeButton = document.getElementById("dark");
+// document.body.classList.add("light");
+// themeButton.addEventListener("click", () => {
+//     const isLight = document.body.classList.contains("light");
+//     if(isLight) {
+//         themeButton.textContent = "Tryb jasny";
+//         document.body.classList.replace("light", "dark");
+//     } else {
+//         themeButton.textContent = "Tryb ciemny";
+//         document.body.classList.replace("dark", "light");
+//         }
+//         localStorage.setItem("theme", document.body.classList[0]);
 
-})
+// })
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
     
 
-    const savedTheme = localStorage.getItem("theme");
-    document.body.classList.add(savedTheme);
-    document.body.classList.remove(savedTheme === "light" ? "dark" : "light");
-    themeButton.textContent = savedTheme === "dark" ? "Tryb ciemny" : "Tryb jasny";
+//     const savedTheme = localStorage.getItem("theme");
+//     document.body.classList.add(savedTheme);
+//     document.body.classList.remove(savedTheme === "light" ? "dark" : "light");
+//     themeButton.textContent = savedTheme === "dark" ? "Tryb ciemny" : "Tryb jasny";
     
-    const counter = document.getElementById("counter");
-    let counterValue = localStorage.getItem("counter");
-    counterValue++;
-    localStorage.setItem("counter", counterValue);
-    counter.textContent = counterValue;
+//     const counter = document.getElementById("counter");
+//     let counterValue = localStorage.getItem("counter");
+//     counterValue++;
+//     localStorage.setItem("counter", counterValue);
+//     counter.textContent = counterValue;
 
 
-}) 
+// }) 
 
 
-const testList = [1,2,3];
 
-testList.forEach( (el) => {console.log(el*2)})
-
-const mappedList = testList.map( (el) => el*3);
-console.log(`map: ${mappedList}`);
+// LISTY
 
 
-const filteredList = testList.filter((el) => { return el%3===0})
-console.log(filteredList);
+// const testList = [1,2,3];
+
+// testList.forEach( (el) => {console.log(el*2)})
+
+// const mappedList = testList.map( (el) => el*3);
+// console.log(`map: ${mappedList}`);
 
 
-const findList = testList.find((el) => { return el%2===0})
-console.log(findList);
-
-const someList = testList.some((el) => { return el%2===0})
-console.log(someList);
-
-const everyList = testList.every((el) => { return el%2===0})
-console.log(everyList);
-
-testList.sort((a,b) => a+b);
-console.log(testList);
+// const filteredList = testList.filter((el) => { return el%3===0})
+// console.log(filteredList);
 
 
-const reducedList = testList.reduce((acc, el) => { return acc+el}, 0);
-console.log(reducedList);
+// const findList = testList.find((el) => { return el%2===0})
+// console.log(findList);
+
+// const someList = testList.some((el) => { return el%2===0})
+// console.log(someList);
+
+// const everyList = testList.every((el) => { return el%2===0})
+// console.log(everyList);
+
+// testList.sort((a,b) => a+b);
+// console.log(testList);
 
 
-const list2 = [-3,5,6];
-console.log(list2.some( (el) => {return el < 0;}));
+// const reducedList = testList.reduce((acc, el) => { return acc+el}, 0);
+// console.log(reducedList);
 
 
-const namesList = ["Ania", "Ola", "Kasia"];
-const reducesString = namesList.reduce( (acc, el) => {return acc+el+ ","} );
-console.log(reducesString);
+// const list2 = [-3,5,6];
+// console.log(list2.some( (el) => {return el < 0;}));
 
 
-const testString = "sdadasdasdD";
-console.log(testString.toUpperCase());
+// const namesList = ["Ania", "Ola", "Kasia"];
+// const reducesString = namesList.reduce( (acc, el) => {return acc+el+ ","} );
+// console.log(reducesString);
 
-const capitalizedNames = namesList.map( (el) => {return el.toUpperCase()});
-console.log(capitalizedNames);
+
+// const testString = "sdadasdasdD";
+// console.log(testString.toUpperCase());
+
+// const capitalizedNames = namesList.map( (el) => {return el.toUpperCase()});
+// console.log(capitalizedNames);

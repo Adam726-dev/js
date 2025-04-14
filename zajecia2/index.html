@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>  
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <div class="content">
-
+      <p class="capital">Stolica:</p>
     </div>
-    
 
+
+    <div class="container">
+      <div id="loading" class="loading"></div>
+      <div id="users-container" class="users-container">
+        Użytkownicy:
+      </div>
+      <div id="error-message" class="error-message"></div>
+    </div>
+
+    <div class="posty">
+      Posty:
+      <div id="posts-container" class="posts-container"></div>
+    </div>
+
+    <fieldset>
+      <legend>Formularz</legend>
+    <form>
+      <input type="text" id="title" placeholder="Tytuł">
+      <input type="text" id="body" placeholder="Treść">
+      <button type="submit" id="btnSubmit">Wyślij</button>
+    </form>
+    </fieldset>
+
+    
     <script src="skrypt.js"></script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,0 +1,35 @@
+#users-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-card{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.user-card:hover{
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.post-card{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post-card:hover{
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
